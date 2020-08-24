@@ -1,0 +1,224 @@
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto ",sans-serif ;
+}
+body{
+    background-image: url(./images/background.png);
+    background-size: cover;    
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+header{
+    display: flex;
+    background-color: rgba(0, 0, 0, .4);
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    background-size: cover;
+    width: 100%;
+    height: 90vh;
+}   
+header .logo img{
+    width: 14rem;
+    height: 14rem;
+    margin-top: 55%;
+    opacity: 0.9;
+    animation: backspin 0.5s ease;
+}
+header .logo img:hover{
+    animation: spin 0.5s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes spin { 
+    from { 
+        transform: rotate(0deg) scale(1);
+    } to { 
+        transform: rotate(720deg) scale(1.1); 
+    }
+}
+
+@keyframes backspin { 
+    from { 
+        transform: rotate(720deg) scale(1.1);
+    } to { 
+        transform: rotate(0deg) scale(1); 
+    }
+}
+header .logo-text{
+    margin-top: 0.5rem;
+    margin-bottom: 2rem ;
+    width: 50%;
+}
+header .header-btn a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    border: 2px solid white;  
+    border-radius: 100px;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    margin: 1rem 1rem;
+    letter-spacing: 2px;
+    align-items: center;
+    transition: all .5s ease;
+}
+header .header-btn .register::after{
+    position: absolute;
+    content: "\2192";
+    font-size: 2rem;
+    top: 80%;
+    left: 46%;  
+    opacity: 0;
+    transition: 0.5s;
+}
+header .header-btn .start_quiz::after{
+    position: absolute;
+    content: "\2192";
+    font-size: 2rem;
+    top: 80%;
+    left: 59%;  
+    opacity: 0;
+    transition: 0.5s;
+}
+header .header-btn a:hover{
+    padding-right: 2.5rem;
+}
+  
+header .header-btn a:hover:after {
+    opacity: 1;
+}
+
+nav{
+    position: fixed;
+    display: flex;
+    background: transparent;
+    justify-content: space-between;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+}
+nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 1rem 1rem;
+    letter-spacing: 0.1rem;
+}
+nav .menu-btn{
+    width: 40px;
+    height: 40px;
+    margin: 1rem 1.2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    background: white;
+    border-radius: 50px;
+}
+nav .menu-btn_burger{
+    position: relative;
+    top: 46%;
+    left: 25%;
+    width: 20px;
+    height: 2px;
+    background: black;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+nav .menu-btn_burger::before,
+nav .menu-btn_burger::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: black;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all .5s ease-in-out;
+}
+nav .menu-btn_burger::before{
+    transform: translateY(-5px);
+}
+nav .menu-btn_burger::after{
+    transform: translateY(5px);
+}
+nav .menu-btn.open .menu-btn_burger{
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+
+}
+nav .menu-btn.open .menu-btn_burger::before{
+    transform: rotate(45deg) translate(35px,-35px);
+}
+nav .menu-btn.open .menu-btn_burger::after{
+    transform: rotate(-45deg) translate(35px,35px);
+}
+.rounds{
+    width: 100%;
+    background: whitesmoke;
+    padding: 3rem 5rem;
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    background: white;
+    width: 100%;
+    margin-bottom: 2rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+    font-family: 'Raleway', sans-serif;
+}
+.card .left-content , .right-content{
+    padding: 2rem 1.5rem;
+    flex: 2;
+}
+.card h1{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 100;
+    border-bottom: 1px solid #3f3c3d;
+}
+.card p{
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: grey;
+    margin-top: 0.5rem;
+}
+.card h3{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: grey;
+    margin-top: 1rem;
+}
+.card .btn{
+    margin-top: 2rem;
+}
+.card a{
+    text-decoration: none;
+    color: #004d40;
+    font-size: 1.2rem;
+    font-weight: 200;
+    border: 1px solid #004d40;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+}
+.card .right-img{
+    flex: 1;
+    clip-path: polygon(50% 0%,0% 100%,100% 100%,100% 0%);
+}
+.card img{
+    height: 100%;
+    width: 100%;
+}
+.card .left-img{
+    flex: 1;
+    clip-path: polygon(0% 0%,0% 100%,100% 100%,50% 0%);
+}
